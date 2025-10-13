@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Exe_IconChanger</id>
+    <version>1.0.0</version>
+    <authors>Exe_IconChanger</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="3e6a49fd85273b9ed07b36de9455f29edf2306b0" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="F:\Decompile Tools\VisualStudio C++\VS Repos\Exe_IconChanger\bin\Debug\net8.0-windows\Exe_IconChanger.runtimeconfig.json" target="lib\net8.0-windows7.0\Exe_IconChanger.runtimeconfig.json" />
+    <file src="F:\Decompile Tools\VisualStudio C++\VS Repos\Exe_IconChanger\bin\Debug\net8.0-windows\Exe_IconChanger.dll" target="lib\net8.0-windows7.0\Exe_IconChanger.dll" />
+  </files>
+</package>

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>icos\IconChanger.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icos\IconChanger.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <!-- Kill running process before build to avoid file-lock errors when copying apphost -->
+  <Target Name="PreKillRunningExe" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)'=='Debug'">
+    <Message Text="Killing running $(AssemblyName).exe if any..." Importance="low" />
+    <Exec Command="taskkill /F /IM $(AssemblyName).exe" IgnoreExitCode="true" />
+    <!-- also try common name variants just in case -->
+    <Exec Command="taskkill /F /IM Exe_IconChanger.exe" IgnoreExitCode="true" />
+    <Exec Command="taskkill /F /IM Exe Icon Changer.exe" IgnoreExitCode="true" />
+    <Exec Command="timeout /t 1 /nobreak &gt;nul" IgnoreExitCode="true" />
+  </Target>
+
+</Project>
